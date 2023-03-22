@@ -1,0 +1,404 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --body-background: rgb(255, 255, 255);
+    --text-color: rgb(0, 0, 0);
+    --ico-color: rgb(128, 128, 128);
+
+    --scroll-color: rgb(151, 151, 151);
+
+    --nav-color:rgb(243, 243, 243);
+    --menu-color:rgb(255, 255, 255);
+    --hover-color: rgba(199, 199, 199, 0.938);
+
+
+    --min-char-height: 100%
+}
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: var(--body-background); 
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.close-container{
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 0px;
+    align-items: center;
+    justify-content: end;
+}
+
+.ham-icon{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger{
+    display: flex;
+    height: 2px;
+    width: 20px;
+    margin: 2px 0px;
+    background-color: var(--ico-color);
+}
+
+.ham-icon .hamburger:nth-child(1){
+    transform: translateY(6px) rotate(45deg);
+    transition: all linear 0.4s;
+}
+
+.ham-icon.active .hamburger:nth-child(1){
+    transform: translateY(0px) rotate(0deg);
+}
+
+
+.ham-icon .hamburger:nth-child(2){
+    opacity: 0;
+}
+
+.ham-icon.active .hamburger:nth-child(2){
+    opacity: 100;
+}
+
+.ham-icon .hamburger:nth-child(3){
+    transform: translateY(-6px) rotate(-45deg);
+    transition: all linear 0.4s;
+}
+
+.ham-icon.active .hamburger:nth-child(3){
+    transform: translateY(0px) rotate(0deg);
+}
+
+.side-nav{
+    flex: auto 0 1;
+    overflow-y: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--nav-color);
+    padding: 10px 15px;
+    overflow-y: scroll;
+}
+
+.side-nav::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 4px var(--nav-color);
+	background-color: var(--nav-color);
+    cursor: pointer;
+}
+
+.side-nav::-webkit-scrollbar
+{
+	width: 4px;
+	background-color:var(--nav-color);
+    cursor: pointer;
+}
+
+.side-nav::-webkit-scrollbar-thumb
+{
+	background-color: var(--scroll-color);
+    cursor: pointer;
+}
+
+.side-nav_p.active{
+    display: none;
+} 
+
+.side-nav_p{
+    display: inline;
+    font-size: 16px;
+    padding: 5px 0px;
+    color: var(--text-color);
+} 
+
+.dash{
+    height: 1px;
+    background-color: var(--scroll-color);
+    width: 100%;
+}
+
+.dash.active{
+    display: none;
+}
+
+
+.drop-down-container.active{
+    display: none;
+}
+
+.drop-down-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transition: all linear 1s;
+}
+
+.drop-down{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--menu-color);
+    padding: 10px 5px;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.drop-down p{
+    color: var(--text-color);
+    padding: 0px 5px;
+}
+
+.drop-down i{
+    color: var(--text-color);
+}
+
+.drop-down-option{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color:var(--menu-color);
+    border-radius: 4px;
+    margin-top: 8px;
+    padding: 10px 5px;
+    width: 100%;
+}
+
+.drop-down-option.active{
+    display: flex;
+}
+
+.drop-down-option.active .drop-down i{
+    transform: rotate(45deg);
+}
+
+.drop-down-option ul{
+    list-style-type: none;
+    width: 100%;
+}
+
+.drop-down-option ul li{
+    
+    color: var(--text-color);
+    margin: 2px 0px;
+    border-radius: 4px;
+}
+
+.drop-down-option ul li a{
+    padding: 10px 5px;
+    display: flex;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    color: var(--text-color);
+}
+
+
+.drop-down-option ul li:hover{
+    background-color: var(--hover-color);
+}
+
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    flex: auto 1 1;
+    background-color: var(--body-background);
+}
+
+.inner-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 10px;
+    width: 90%;
+    height: 100%;
+}
+
+.main-container h1{
+    padding: 10px 10px;
+    color: var(--text-color);
+}
+
+.main-container-p{
+    padding: 5px 10px;
+    color: var(--text-color);
+}
+
+.ele-holder div{
+    display: flex;
+    padding-left: 10px;
+}
+
+.ele-holder{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.inner-main div p{
+    margin-right: 20px;
+    color: var(--text-color);
+}
+
+.nav-bar{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+}
+.nav-bar i{
+    color: var(--ico-color);
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all linear 0.5s;
+}
+
+.c-box{
+    height: var(--min-char-height);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.img{
+    margin-top: 20px;
+    max-width: 100%;
+    max-height: var(--min-char-height);
+    color: var(--text-color);
+}
+
+.btn{
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    color: var(--text-color);
+    background-color: var(--menu-color);
+    border-radius: 5px;
+    border: transparent;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.btn.active{
+    display: none;
+}
+
+.btn:hover{
+    background-color: var(--hover-color);
+}
+
+
+.table-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px 0px;
+}
+
+.table-box.active{
+    display: none;
+}
+
+.table-box p{
+    padding: 5px 5px;
+    color: var(--text-color);
+}
+
+.table tr td{
+    padding: 5px 5px;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.chart-holder{
+    display: none;
+    flex-direction: column;
+    
+}
+
+.predict{
+    display: none !important;
+}
+
+.predict.active{
+    display: block !important;
+}
+
+.myChart{
+    display: block !important;
+}
+.myChart.active{
+    display: none !important;
+}
+
+
+
+
+@media screen and (max-width: 865px) {
+    .main-container h1{
+       font-size: 20px;
+    }
+    
+    .main-container-p{
+        font-size: 14px;
+    }
+
+    .inner-main div p{
+        font-size: 14px;
+    }
+
+    .side-nav_p{
+        font-size: 14px;
+    } 
+
+    .drop-down-option ul li{
+        font-size: 14px;
+    }
+    
+    .drop-down{
+        font-size: 14px;
+    }
+
+    .nav-bar i{
+        font-size: 14px;
+    }
+
+    .hamburger{
+        width: 15px;
+    }
+
+    .table-box p{
+        font-size: 14px;
+    }
+
+    .table tr td{
+        font-size: 14px;
+    }
+    .btn{
+        font-size: 14px;
+    }
+}
