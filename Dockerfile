@@ -1,7 +1,7 @@
 FROM python:3.9.1
 EXPOSE 5000
 COPY ./requirements.txt /app
-COPY ./* /app
+COPY ./* ./app
 WORKDIR /app
 RUN ls
 RUN python -m pip install --upgrade pip
