@@ -1,9 +1,10 @@
-FROM python:3.8-alpine
+FROM python:3.9.1
 EXPOSE 5000
 COPY . /app
 WORKDIR /app
-RUN pip3 install -r requirement.txt
-RUN pip3 install Flask
-RUN pip3 install --upgrade --no-cache-dir git+https://github.com/StreamAlpha/tvdatafeed.git
+RUN python -m pip install --upgrade pip
+RUN pip install -r requirement.txt
+RUN pip install Flask
+RUN pip install --upgrade --no-cache-dir git+https://github.com/StreamAlpha/tvdatafeed.git
 ENTRYPOINT ["python"]
 CMD ["app.py"]
