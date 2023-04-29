@@ -1,5 +1,6 @@
 FROM python:3.9.1
 EXPOSE 5000
+RUN mkdir app
 COPY ./requirements.txt /app
 WORKDIR /app
 RUN python -m pip install --upgrade pip
