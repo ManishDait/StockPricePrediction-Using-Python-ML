@@ -2,6 +2,7 @@ FROM python:3.9.1
 EXPOSE 5000
 COPY . /app
 WORKDIR /app
+RUN ls
 RUN python -m pip install --upgrade pip
 RUN pip install -r requirement.txt
 RUN pip install Flask
