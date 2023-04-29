@@ -6,7 +6,7 @@ WORKDIR /app
 RUN python -m pip install --upgrade pip
 RUN pip install -r requirement.txt
 RUN pip install Flask
-RUN pip install --upgrade --no-cache-dir git+https://github.com/StreamAlpha/tvdatafeed.git
+RUN pip install tvdatafeed
 ADD ./* .
 ENTRYPOINT ["python"]
 CMD ["app.py"]
